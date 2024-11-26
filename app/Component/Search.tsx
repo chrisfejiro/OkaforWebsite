@@ -15,7 +15,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ searchTerm, onSearch }) => {
         placeholder="Search products..."
         value={searchTerm}
         onChange={(e) => onSearch(e.target.value)}
-        className="input input-bordered w-full"
+        className="input input-bordered w-96"
       />
     </div>
   );

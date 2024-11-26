@@ -1,20 +1,26 @@
 // components/NavBar.tsx
 'use client'
-import React from 'react';
 import Link from "next/link"; // If using Next.js for routing
 import { useCart } from "../Data/CartContext"; // Import the useCart hook
+import SearchBar from '../Component/Search';
 
-const NavBar: React.FC = () => {
+interface NavBarProps {
+  search: string;
+  setSearch: React.Dispatch<React.SetStateAction<string>>;
+}
+const NavBar: React.FC<NavBarProps>  = ({search,setSearch}) => {
   const { getTotalItems, getSubtotal } = useCart();
+  // const [searchTerm, setSearchTerm] = useState<string>(''); // State for the search term
   const totalItems = getTotalItems();
   const subtotal = getSubtotal();
   return (
     <div className="navbar bg-base-100 bg-orange-100">
-    <div className="flex-1">
-      <a className="btn btn-ghost text-xl">  
-        <h1 className="text-2xl font-bold mb-4">Okafor Stores</h1>
-      </a>
-    </div>
+      <div className="flex-1">
+        <a className="btn btn-ghost text-xl">  
+          <h1 className="text-2xl font-bold mb-4">Okafor Stores</h1>
+        </a>
+      </div>
+      <SearchBar searchTerm={search} onSearch={setSearch} /> {/* Add SearchBar here */}
     <div className="flex-none">
       {/* Cart Dropdown */}
       <div className="dropdown dropdown-end">

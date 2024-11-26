@@ -17,7 +17,7 @@ const Cart: React.FC = () => {
         <div>
           <p>Your cart is empty.</p>
           <div className="mt-4">
-            <Link href="/Home">
+            <Link href="/">
               <button className="btn btn-primary">Continue Shopping</button>
             </Link>
           </div>
@@ -67,7 +67,7 @@ const Cart: React.FC = () => {
             <h2 className="text-lg font-bold">Total: #{totalPrice.toFixed(2)}</h2>
           </div>
           <div className="mt-4">
-            <Link href="/Home">
+            <Link href="/">
               <button className="btn btn-primary">Continue Shopping</button>
             </Link>
           </div>
